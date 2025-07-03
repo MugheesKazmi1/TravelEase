@@ -17,7 +17,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - run: npm install
-      - run: npx htmlhint "src/**/*.html" .htmlhintrc
-      - run: npx stylelint "**/*.css"
+      - run: npm install -g htmlhint stylelint stylelint-config-standard
+
+      - run: htmlhint "src/**/*.html" .htmlhintrc
+      - run: stylelint "**/*.css"
       - run: npx parcel build src/index.html --dist-dir dist
