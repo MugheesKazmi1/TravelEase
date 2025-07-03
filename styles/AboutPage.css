@@ -1,0 +1,37 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  color: #333;
+  background-color: white;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+  color: #2e8b57;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+footer {
+  margin-top: 30px;
+}
