@@ -1,0 +1,23 @@
+name: CI on Release
+
+on:
+  push:
+    branches:
+      - release
+  pull_request:
+    branches:
+      - release
+
+permissions:
+  contents: read
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: npx htmlhint "src/**/*.html" .htmlhintrc
+      - run: npx stylelint "**/*.css"
+      - run: npx parcel build src/index.html --dist-dir dist
