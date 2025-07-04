@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | TravelEase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">TravelEase</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="AboutPage.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Destinations</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Trip Guide</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="text-center my-5">
+  <h1>Contact TravelEase</h1>
+  <p class="lead">We’d love to hear from you! Reach out with questions, suggestions, or to start planning your trip.</p>
+</header>
+
+<!-- Main Content -->
+<main class="container mb-5">
+  <div class="row">
+    <!-- Contact Info -->
+    <div class="col-md-6 mb-4">
+      <h3>Office Details</h3>
+      <p><strong>Email:</strong> contact@travelease.com</p>
+      <p><strong>WhatsApp:</strong> +92 300 1234567</p>
+      <p><strong>Address:</strong> Main Bazaar, Skardu, Gilgit-Baltistan, Pakistan</p>
+      <p><strong>Office Hours:</strong><br>Mon - Sat: 9:00 AM – 6:00 PM<br>Sunday: Closed</p>
+
+      <h5 class="mt-4">Follow Us</h5>
+      <a href="#" target="_blank" class="me-3 text-primary">Facebook</a>
+      <a href="#" target="_blank" class="me-3 text-danger">YouTube</a>
+      <a href="#" target="_blank" class="text-warning">Instagram</a>
+
+      <div class="mt-4">
+        <h5>Our Location</h5>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Skardu_City_Map.png/640px-Skardu_City_Map.png" 
+             alt="Map of Skardu" class="img-fluid rounded shadow">
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="col-md-6 mb-4">
+      <h3>Send Us a Message</h3>
+      <form id="contactForm" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" required>
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" required>
+          <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
+        <div class="mb-3">
+          <label for="subject" class="form-label">Subject</label>
+          <input type="text" class="form-control" id="subject" required>
+          <div class="invalid-feedback">Please enter a subject.</div>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" rows="4" required></textarea>
+          <div class="invalid-feedback">Please write your message.</div>
+        </div>
+        <button type="submit" class="btn btn-success">Send Message</button>
+        <div class="mt-3 text-success d-none" id="formSuccess">Message sent successfully!</div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-light text-center py-4">
+  <p class="mb-0">&copy; 2025 TravelEase. All rights reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Bootstrap form validation
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (form.checkValidity()) {
+      successMsg.classList.remove('d-none');
+      form.reset();
+      form.classList.remove('was-validated');
+    } else {
+      form.classList.add('was-validated');
+    }
+  });
+</script>
+</body>
+</html>
