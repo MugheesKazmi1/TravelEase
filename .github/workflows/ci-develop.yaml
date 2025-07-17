@@ -1,35 +1,22 @@
-
-name: ci-development
-
+name: wf-ci-develop
 on:
   pull_request:
     branches:
       - develop
-
+    types:
+      - opened
+      - synchronize
 jobs:
-  linting-job:
+  linting-develop-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: npm install htmlhint stylelint --save-dev
-
-      - name: Lint HTML files
-        run: npx htmlhint "./src/index.html"
-
-      - name: Lint CSS files
-        run: npx stylelint "styles//*.css"
-
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: npm install parcel-bundler --save-dev
-
-      - name: Build project
-        run: npx parcel build src/index.html
+      - name: Lint HTML Files With HTMLHint
+        run: npx htmlhint "**/*.html"
+      - name: Lint CSS Files With Stylelint
+        run: npx stylelint "**/*.css" 
+      - name: Test Builing With Parcel
+        run: npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
+      
+  
